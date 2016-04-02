@@ -27,6 +27,8 @@ def downloadid(id, filename):
     url = "http://lp3/download.php?job=" + id
 #    print('download url is: ' + url)
     download = requests.get(url)
+    if filename == "Loading....mp3":
+        currentnp = ''
     print("Writing " + filename + " to disk.")
     file = open(filename, 'wb')
     file.write(download.content)
