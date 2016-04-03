@@ -50,8 +50,18 @@ def findsongname(songtext):
             last = i
 #            print("last found!")
             break
+
+#   Remove illegal characters from file names
     songname = songtext[first:last] + ".mp3"
     songname = songname.replace(':', ".")
+    songname = songname.replace('*', ".")
+    songname = songname.replace('<', ".")
+    songname = songname.replace('>', ".")
+    songname = songname.replace('"', ".")
+    #songname = songname.replace(["\"] ".")
+    songname = songname.replace('/', ".")
+    songname = songname.replace('|', ".")
+    songname = songname.replace('?', ".")
     print("Songname is: " + songname)
     return songname
 
